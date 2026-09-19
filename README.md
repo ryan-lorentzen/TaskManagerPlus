@@ -1,8 +1,8 @@
-# SystemScope
+# TaskManager++
 
 **Windows System Monitoring & Diagnostics**
 
-SystemScope is a C++ desktop application designed to simplify Windows performance monitoring and system troubleshooting. It combines real-time hardware monitoring with a centralized error dashboard, making it easier to identify crashes, hardware errors, and other significant system events without digging through Windows Event Viewer.
+TaskManager++ is a C++ desktop application designed to simplify Windows performance monitoring and system troubleshooting. It combines real-time hardware monitoring with a centralized error dashboard, making it easier to identify crashes, hardware errors, and other significant system events without digging through Windows Event Viewer.
 
 The goal is to provide a lightweight, organized, and accessible tool for understanding system performance and diagnosing instability.
 
@@ -48,7 +48,7 @@ Help users investigate system failures by displaying events that occurred around
 * Identify potentially related events.
 * Compare event timestamps with recorded performance data.
 
-SystemScope presents diagnostic evidence without automatically assuming that one event caused another.
+TaskManager++ presents diagnostic evidence without automatically assuming that one event caused another.
 
 ### 5. Diagnostic Reports
 
@@ -131,7 +131,7 @@ The following features are planned for potential releases beyond Version 1.
 
 ## Project Goals
 
-SystemScope is intended to be both a practical Windows diagnostic utility and an exploration of systems-level software engineering.
+TaskManager++ is intended to be both a practical Windows diagnostic utility and an exploration of systems-level software engineering.
 
 Key development goals include:
 
