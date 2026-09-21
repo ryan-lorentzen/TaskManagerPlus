@@ -1,0 +1,223 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-660992150323bc052758.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TaskManagerPlus",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-223412597c2188e88d4f.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-76ebb2e0f6d5d1d92c19.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-2bc259e910d2c80776dc.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-1031d30ce588f59dcd86.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-6ae13849c147cf4388da.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus-Debug-fceac0bbefa124953be9.json",
+					"name" : "appTaskManagerPlus",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_autogen-Debug-508281102a4d41da94d4.json",
+					"name" : "appTaskManagerPlus_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_autogen_timestamp_deps-Debug-f7cd0acf62418d2c330a.json",
+					"name" : "appTaskManagerPlus_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_copy_qml-Debug-4d3d3f13e75bc841dfaf.json",
+					"name" : "appTaskManagerPlus_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_copy_res-Debug-350062d81321c0c6245d.json",
+					"name" : "appTaskManagerPlus_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_qmlimportscan-Debug-8a64068602df47152485.json",
+					"name" : "appTaskManagerPlus_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_qmllint-Debug-57b0009505047f4111b3.json",
+					"name" : "appTaskManagerPlus_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_qmllint_json-Debug-04ce967dfad120f202d2.json",
+					"name" : "appTaskManagerPlus_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_qmllint_module-Debug-2242037f9f3f0d13fb3d.json",
+					"name" : "appTaskManagerPlus_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appTaskManagerPlus_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appTaskManagerPlus_qmltyperegistration-Debug-6c5a40bff317be70d95a.json",
+					"name" : "appTaskManagerPlus_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_qml_context_properties-Debug-779cb9133f95ae3e7371.json",
+					"name" : "clean_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dump_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dump_qml_context_properties-Debug-35085f724684416f1bf9.json",
+					"name" : "dump_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Debug-37cab2a9829ee01fa7b9.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appTaskManagerPlus_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appTaskManagerPlus_aotstats_target-Debug-1af830503f5b58dd507c.json",
+					"name" : "module_appTaskManagerPlus_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug",
+		"source" : "C:/Users/rlore/QtProjects/TaskManagerPlus"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

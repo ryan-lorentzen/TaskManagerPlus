@@ -1,0 +1,2 @@
+CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj: \
+ C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\appTaskManagerPlus_autogen\mocs_compilation.cpp

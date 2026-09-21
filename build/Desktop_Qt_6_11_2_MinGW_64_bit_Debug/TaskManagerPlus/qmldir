@@ -1,0 +1,6 @@
+module TaskManagerPlus
+typeinfo appTaskManagerPlus.qmltypes
+prefer :/qt/qml/TaskManagerPlus/
+Main 254.0 Main.qml
+depends QtQuick
+

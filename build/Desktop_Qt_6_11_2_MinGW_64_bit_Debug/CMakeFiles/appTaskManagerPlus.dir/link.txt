@@ -1,0 +1,3 @@
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\appTaskManagerPlus.dir/objects.a
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\appTaskManagerPlus.dir/objects.a @CMakeFiles\appTaskManagerPlus.dir\objects1.rsp
+C:\Qt\Tools\mingw1310_64\bin\g++.exe -g -mwindows -Wl,--whole-archive CMakeFiles\appTaskManagerPlus.dir/objects.a -Wl,--no-whole-archive -o appTaskManagerPlus.exe -Wl,--out-implib,libappTaskManagerPlus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\appTaskManagerPlus.dir\linkLibs.rsp

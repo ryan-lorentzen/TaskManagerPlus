@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  ".qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp"
+  ".qt/rcc/qrc_qmake_TaskManagerPlus.cpp"
+  ".rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp"
+  ".rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.aotstats"
+  ".rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp"
+  "CMakeFiles/appTaskManagerPlus_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/appTaskManagerPlus_autogen.dir/ParseCache.txt"
+  "appTaskManagerPlus_autogen"
+  "CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj.d"
+  "CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj.d"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj.d"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj.d"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj.d"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj.d"
+  "CMakeFiles/appTaskManagerPlus.dir/main.cpp.obj"
+  "CMakeFiles/appTaskManagerPlus.dir/main.cpp.obj.d"
+  "TaskManagerPlus/appTaskManagerPlus.qmltypes"
+  "appTaskManagerPlus.exe"
+  "appTaskManagerPlus.exe.manifest"
+  "appTaskManagerPlus.pdb"
+  "appTaskManagerPlus_autogen/mocs_compilation.cpp"
+  "appTaskManagerPlus_autogen/timestamp"
+  "apptaskmanagerplus_qmltyperegistrations.cpp"
+  "libappTaskManagerPlus.dll.a"
+  "meta_types/appTaskManagerPlus_json_file_list.txt"
+  "meta_types/appTaskManagerPlus_json_file_list.txt.timestamp"
+  "meta_types/qt6apptaskmanagerplus_metatypes.json"
+  "meta_types/qt6apptaskmanagerplus_metatypes.json.gen"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/appTaskManagerPlus.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
