@@ -15,6 +15,12 @@ ApplicationWindow {
     property int currentPage: 0
     property int selectedEvent: 0
     property bool temperatureInFahrenheit: false
+    readonly property var activitySamples: ({
+        cpu: [0.20, 0.27, 0.21, 0.40, 0.32, 0.54, 0.40, 0.44, 0.31, 0.50, 0.42, 0.64, 0.51, 0.56, 0.43, 0.48, 0.37, 0.42],
+        gpu: [0.35, 0.42, 0.59, 0.63, 0.51, 0.68, 0.72, 0.61, 0.75, 0.67, 0.79, 0.64, 0.70, 0.81, 0.74, 0.66, 0.72, 0.67],
+        memory: [0.56, 0.58, 0.59, 0.57, 0.61, 0.60, 0.62, 0.64, 0.63, 0.65, 0.64, 0.66, 0.63, 0.65, 0.62, 0.64, 0.63, 0.63],
+        disk: [0.12, 0.17, 0.13, 0.24, 0.41, 0.18, 0.14, 0.28, 0.52, 0.21, 0.16, 0.38, 0.26, 0.19, 0.47, 0.23, 0.14, 0.20]
+    })
 
     function formatTemperature(celsius) {
         return temperatureInFahrenheit ? Math.round(celsius * 9 / 5 + 32) + " °F" : celsius + " °C"
@@ -189,8 +195,7 @@ ApplicationWindow {
 
     component PerformanceGraph: Canvas {
         id: graph
-        property color lineColor: theme.cyan
-        property string caption: "CPU utilization"
+        property var lines: []
         implicitHeight: 230
         onPaint: {
             var ctx = getContext("2d")
@@ -203,20 +208,51 @@ ApplicationWindow {
             for (var x = 0; x < width; x += 60) {
                 ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke()
             }
-            var points = [0.20, 0.27, 0.21, 0.40, 0.32, 0.54, 0.40, 0.44, 0.31, 0.50, 0.42, 0.64, 0.51, 0.56, 0.43, 0.48, 0.37, 0.42]
-            ctx.beginPath()
-            for (var i = 0; i < points.length; ++i) {
-                var px = i * width / (points.length - 1)
-                var py = height - (points[i] * (height - 25)) - 12
-                if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py)
+            for (var series = 0; series < lines.length; ++series) {
+                if (lines[series].enabled === false)
+                    continue
+                var points = lines[series].points
+                if (points.length < 2)
+                    continue
+                ctx.beginPath()
+                for (var i = 0; i < points.length; ++i) {
+                    var px = i * width / (points.length - 1)
+                    var py = height - (points[i] * (height - 25)) - 12
+                    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py)
+                }
+                ctx.strokeStyle = lines[series].color
+                ctx.lineWidth = 2
+                ctx.stroke()
             }
-            ctx.strokeStyle = lineColor
-            ctx.lineWidth = 2
-            ctx.stroke()
         }
         Component.onCompleted: requestPaint()
+        onLinesChanged: requestPaint()
         onWidthChanged: requestPaint()
         onHeightChanged: requestPaint()
+    }
+
+    component SeriesCheckBox: CheckBox {
+        id: seriesCheckBox
+        required property color lineColor
+        checked: true
+        implicitHeight: 22
+        spacing: 6
+        indicator: Rectangle {
+            implicitWidth: 14
+            implicitHeight: 14
+            x: seriesCheckBox.leftPadding
+            y: (parent.height - height) / 2
+            radius: 3
+            color: seriesCheckBox.checked ? seriesCheckBox.lineColor : theme.panelRaised
+            border.color: seriesCheckBox.lineColor
+            Text { anchors.centerIn: parent; text: "✓"; color: theme.background; font.pixelSize: 11; visible: seriesCheckBox.checked }
+        }
+        contentItem: RowLayout {
+            spacing: 4
+            Item { Layout.preferredWidth: seriesCheckBox.indicator.width + seriesCheckBox.spacing - parent.spacing }
+            Rectangle { implicitWidth: 12; implicitHeight: 3; color: seriesCheckBox.lineColor }
+            Text { text: seriesCheckBox.text; color: theme.muted; font.pixelSize: 11 }
+        }
     }
 
     RowLayout {
@@ -309,11 +345,22 @@ ApplicationWindow {
                                 Panel { Layout.fillWidth: true; implicitHeight: 280
                                     ColumnLayout { anchors.fill: parent; anchors.margins: 18; spacing: 7
                                         RowLayout { Layout.fillWidth: true
-                                            Text { text: "CPU ACTIVITY"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
+                                            ComboBox {
+                                                id: overviewActivity
+                                                model: ["CPU Activity", "GPU Activity"]
+                                                implicitWidth: 160
+                                                contentItem: Text { text: overviewActivity.displayText; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold; verticalAlignment: Text.AlignVCenter; leftPadding: 8; rightPadding: 24 }
+                                                indicator: Text { text: "▾"; color: theme.cyan; font.pixelSize: 16; anchors.right: parent.right; anchors.rightMargin: 8; anchors.verticalCenter: parent.verticalCenter }
+                                                background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
+                                            }
                                             Item { Layout.fillWidth: true }
                                             Text { text: "LAST 60 MINUTES"; color: theme.muted; font.pixelSize: 10; font.letterSpacing: 1 }
                                         }
-                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lineColor: theme.cyan }
+                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true
+                                            lines: overviewActivity.currentIndex === 0
+                                                   ? [{ points: window.activitySamples.cpu, color: theme.cyan }]
+                                                   : [{ points: window.activitySamples.gpu, color: theme.green }]
+                                        }
                                     }
                                 }
                                 Panel { Layout.fillWidth: true; implicitHeight: 78
@@ -433,7 +480,20 @@ ApplicationWindow {
                                     ColumnLayout { Layout.fillWidth: true; Layout.fillHeight: true; spacing: 9
                                         MetaText { text: "PERFORMANCE CONTEXT" }
                                         Text { text: "Resource activity around the selected timeline window"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lineColor: theme.purple }
+                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true
+                                            lines: [
+                                                { points: window.activitySamples.cpu, color: theme.cyan, enabled: cpuLine.checked },
+                                                { points: window.activitySamples.gpu, color: theme.green, enabled: gpuLine.checked },
+                                                { points: window.activitySamples.memory, color: theme.purple, enabled: memoryLine.checked },
+                                                { points: window.activitySamples.disk, color: theme.amber, enabled: diskLine.checked }
+                                            ]
+                                        }
+                                        RowLayout { spacing: 12
+                                            SeriesCheckBox { id: cpuLine; text: "CPU"; lineColor: theme.cyan }
+                                            SeriesCheckBox { id: gpuLine; text: "GPU"; lineColor: theme.green }
+                                            SeriesCheckBox { id: memoryLine; text: "Memory"; lineColor: theme.purple }
+                                            SeriesCheckBox { id: diskLine; text: "Disk"; lineColor: theme.amber }
+                                        }
                                         Text { text: "Context helps compare timestamps, not establish causation."; color: theme.amber; font.pixelSize: 11 }
                                     }
                                 }
@@ -442,23 +502,38 @@ ApplicationWindow {
                     }
 
                     Item {
-                        GridLayout { anchors.fill: parent; columns: width > 900 ? 2 : 1; columnSpacing: 16; rowSpacing: 16
-                            Panel { Layout.fillWidth: true; Layout.fillHeight: true
-                                ColumnLayout {
-                                    anchors.fill: parent; anchors.margins: 18
-                                    Text { text: "CPU UTILIZATION"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                    Text { text: "42%  /  3.86 GHz"; color: theme.cyan; font.pixelSize: 23; font.weight: Font.DemiBold }
-                                    PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lineColor: theme.cyan }
-                                    MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
+                        ScrollView {
+                            id: performanceScroll
+                            anchors.fill: parent
+                            clip: true
+                            contentWidth: availableWidth
+                            GridLayout { width: performanceScroll.availableWidth; columns: width > 900 ? 2 : 1; columnSpacing: 16; rowSpacing: 16
+                                Panel { Layout.fillWidth: true; implicitHeight: 300
+                                    ColumnLayout {
+                                        anchors.fill: parent; anchors.margins: 18
+                                        Text { text: "CPU UTILIZATION"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
+                                        Text { text: "42%  /  3.86 GHz"; color: theme.cyan; font.pixelSize: 23; font.weight: Font.DemiBold }
+                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lines: [{ points: window.activitySamples.cpu, color: theme.cyan }] }
+                                        MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
+                                    }
                                 }
-                            }
-                            Panel { Layout.fillWidth: true; Layout.fillHeight: true
-                                ColumnLayout {
-                                    anchors.fill: parent; anchors.margins: 18
-                                    Text { text: "MEMORY USAGE"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                    Text { text: "10.1 GB  /  16.0 GB"; color: theme.purple; font.pixelSize: 23; font.weight: Font.DemiBold }
-                                    PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lineColor: theme.purple }
-                                    MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
+                                Panel { Layout.fillWidth: true; implicitHeight: 300
+                                    ColumnLayout {
+                                        anchors.fill: parent; anchors.margins: 18
+                                        Text { text: "GPU UTILIZATION"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
+                                        Text { text: "67%  /  1.92 GHz (sample GPU)"; color: theme.green; font.pixelSize: 23; font.weight: Font.DemiBold }
+                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lines: [{ points: window.activitySamples.gpu, color: theme.green }] }
+                                        MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
+                                    }
+                                }
+                                Panel { Layout.fillWidth: true; implicitHeight: 300
+                                    ColumnLayout {
+                                        anchors.fill: parent; anchors.margins: 18
+                                        Text { text: "MEMORY USAGE"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
+                                        Text { text: "10.1 GB  /  16.0 GB"; color: theme.purple; font.pixelSize: 23; font.weight: Font.DemiBold }
+                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lines: [{ points: window.activitySamples.memory, color: theme.purple }] }
+                                        MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
+                                    }
                                 }
                             }
                         }
@@ -468,7 +543,7 @@ ApplicationWindow {
                         ColumnLayout { anchors.fill: parent; spacing: 16
                             Text { text: "Export diagnostic evidence when collection and storage are connected."; color: theme.muted; font.pixelSize: 13 }
                             GridLayout { Layout.fillWidth: true; columns: width > 920 ? 3 : 2; columnSpacing: 16; rowSpacing: 16
-                                Repeater { model: [ ["Event History", "Event records and technical details", theme.pink], ["Performance Data", "CPU and RAM time-series data", theme.cyan], ["Diagnostic Session", "Timeline and selected evidence", theme.purple] ]; delegate: Panel { Layout.fillWidth: true; implicitHeight: 205
+                                Repeater { model: [ ["Event History", "Event records and technical details", theme.pink], ["Performance Data", "CPU, GPU, and RAM time-series data", theme.cyan], ["Diagnostic Session", "Timeline and selected evidence", theme.purple] ]; delegate: Panel { Layout.fillWidth: true; implicitHeight: 205
                                     required property var modelData
                                     ColumnLayout { anchors.fill: parent; anchors.margins: 18; spacing: 10
                                         Rectangle { width: 33; height: 33; radius: 8; color: "#1b3348"; Text { anchors.centerIn: parent; text: "+"; color: modelData[2]; font.pixelSize: 20 } }
