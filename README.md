@@ -6,7 +6,7 @@ TaskManager++ is a C++ desktop application designed to simplify Windows performa
 
 The goal is to provide a lightweight, organized, and accessible tool for understanding system performance and diagnosing instability.
 
-**Current status:** The Qt interface is a frontend preview using local sample events and performance values. Its single **Events** screen combines an event list and details with history search and date/category controls. Event collection, filtering, SQLite storage, and live monitoring are not yet connected.
+**Current status:** The Qt interface is a frontend preview using local sample events and performance values. System Metrics includes a sample dedicated GPU load card and sample CPU/GPU temperatures with a °C/°F switch; no GPU detection or hardware temperature collection is connected. Its single **Events** screen combines an event list and details with history search and date/category controls. Event collection, filtering, SQLite storage, and live monitoring are not yet connected.
 
 ---
 

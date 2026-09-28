@@ -14,6 +14,11 @@ ApplicationWindow {
 
     property int currentPage: 0
     property int selectedEvent: 0
+    property bool temperatureInFahrenheit: false
+
+    function formatTemperature(celsius) {
+        return temperatureInFahrenheit ? Math.round(celsius * 9 / 5 + 32) + " °F" : celsius + " °C"
+    }
 
     QtObject {
         id: theme
@@ -66,7 +71,9 @@ ApplicationWindow {
         required property string value
         required property string subtext
         required property color accent
-        implicitHeight: 138
+        property int temperatureCelsius: -1
+        property real fillRatio: 0.63
+        implicitHeight: 156
 
         ColumnLayout {
             anchors.fill: parent
@@ -84,6 +91,14 @@ ApplicationWindow {
                 text: subtext
                 color: theme.muted
                 font.pixelSize: 12
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+            Text {
+                text: "Temperature  " + window.formatTemperature(temperatureCelsius)
+                visible: temperatureCelsius >= 0
+                color: theme.muted
+                font.pixelSize: 12
             }
             Item { Layout.fillHeight: true }
             Rectangle {
@@ -92,7 +107,7 @@ ApplicationWindow {
                 radius: 2
                 color: Qt.rgba(accent.r, accent.g, accent.b, 0.18)
                 Rectangle {
-                    width: parent.width * (label === "CPU load" ? 0.42 : 0.63)
+                    width: parent.width * fillRatio
                     height: parent.height
                     radius: parent.radius
                     color: accent
@@ -268,35 +283,50 @@ ApplicationWindow {
                     currentIndex: window.currentPage
 
                     Item {
-                        ColumnLayout {
+                        ScrollView {
+                            id: overviewScroll
                             anchors.fill: parent
-                            spacing: 16
-                            Text { text: "SYSTEM METRICS"; color: theme.muted; font.pixelSize: 11; font.letterSpacing: 1.5 }
-                            GridLayout { Layout.fillWidth: true; columns: width > 840 ? 3 : 2; columnSpacing: 14; rowSpacing: 14
-                                MetricCard { Layout.fillWidth: true; label: "CPU load"; value: "42%"; subtext: "3.86 GHz  /  12 logical cores"; accent: theme.cyan }
-                                MetricCard { Layout.fillWidth: true; label: "Memory"; value: "10.1 GB"; subtext: "63% of 16.0 GB in use"; accent: theme.purple }
-                                MetricCard { Layout.fillWidth: true; label: "Event health"; value: "03"; subtext: "new items in the last hour"; accent: theme.pink }
-                            }
-                            Panel { Layout.fillWidth: true; Layout.fillHeight: true
-                                ColumnLayout { anchors.fill: parent; anchors.margins: 18; spacing: 7
-                                    RowLayout { Layout.fillWidth: true
-                                        Text { text: "CPU ACTIVITY"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                        Item { Layout.fillWidth: true }
-                                        Text { text: "LAST 60 MINUTES"; color: theme.muted; font.pixelSize: 10; font.letterSpacing: 1 }
+                            clip: true
+                            contentWidth: availableWidth
+                            ColumnLayout {
+                                width: overviewScroll.availableWidth
+                                spacing: 16
+                                RowLayout { Layout.fillWidth: true
+                                    Text { text: "SYSTEM METRICS"; color: theme.muted; font.pixelSize: 11; font.letterSpacing: 1.5 }
+                                    Item { Layout.fillWidth: true }
+                                    MetaText { text: "TEMPERATURE UNIT" }
+                                    Button { text: window.temperatureInFahrenheit ? "°F" : "°C"; onClicked: window.temperatureInFahrenheit = !window.temperatureInFahrenheit
+                                        contentItem: Text { text: parent.text; color: theme.cyan; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+                                        background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
                                     }
-                                    PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lineColor: theme.cyan }
                                 }
-                            }
-                            Panel { Layout.fillWidth: true; implicitHeight: 78
-                                RowLayout { anchors.fill: parent; anchors.margins: 15; spacing: 14
-                                    Rectangle { width: 34; height: 34; radius: 17; color: "#402538"; Text { anchors.centerIn: parent; text: "!"; color: theme.pink; font.bold: true; font.pixelSize: 18 } }
-                                    ColumnLayout { Layout.fillWidth: true; spacing: 3
-                                        Text { text: "2 critical records need review"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                        Text { text: "Latest: Kernel-Power / Event 41 at 09:42"; color: theme.muted; font.pixelSize: 11 }
+                                GridLayout { Layout.fillWidth: true; columns: width > 900 ? 4 : 2; columnSpacing: 14; rowSpacing: 14
+                                    MetricCard { Layout.fillWidth: true; label: "CPU load"; value: "42%"; subtext: "3.86 GHz  /  12 logical cores"; temperatureCelsius: 58; fillRatio: 0.42; accent: theme.cyan }
+                                    MetricCard { Layout.fillWidth: true; label: "GPU load"; value: "67%"; subtext: "1.92 GHz  /  sample dedicated GPU"; temperatureCelsius: 64; fillRatio: 0.67; accent: theme.green }
+                                    MetricCard { Layout.fillWidth: true; label: "Memory"; value: "10.1 GB"; subtext: "63% of 16.0 GB in use"; accent: theme.purple }
+                                    MetricCard { Layout.fillWidth: true; label: "Event health"; value: "03"; subtext: "new items in the last hour"; accent: theme.pink }
+                                }
+                                Panel { Layout.fillWidth: true; implicitHeight: 280
+                                    ColumnLayout { anchors.fill: parent; anchors.margins: 18; spacing: 7
+                                        RowLayout { Layout.fillWidth: true
+                                            Text { text: "CPU ACTIVITY"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
+                                            Item { Layout.fillWidth: true }
+                                            Text { text: "LAST 60 MINUTES"; color: theme.muted; font.pixelSize: 10; font.letterSpacing: 1 }
+                                        }
+                                        PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lineColor: theme.cyan }
                                     }
-                                    Button { text: "Open Events"; onClicked: window.currentPage = 1
-                                        contentItem: Text { text: "Open Events"; color: theme.cyan; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
-                                        background: Rectangle { radius: 6; color: "#12364d"; border.color: "#28617c" }
+                                }
+                                Panel { Layout.fillWidth: true; implicitHeight: 78
+                                    RowLayout { anchors.fill: parent; anchors.margins: 15; spacing: 14
+                                        Rectangle { width: 34; height: 34; radius: 17; color: "#402538"; Text { anchors.centerIn: parent; text: "!"; color: theme.pink; font.bold: true; font.pixelSize: 18 } }
+                                        ColumnLayout { Layout.fillWidth: true; spacing: 3
+                                            Text { text: "2 critical records need review"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
+                                            Text { text: "Latest: Kernel-Power / Event 41 at 09:42"; color: theme.muted; font.pixelSize: 11 }
+                                        }
+                                        Button { text: "Open Events"; onClicked: window.currentPage = 1
+                                            contentItem: Text { text: "Open Events"; color: theme.cyan; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+                                            background: Rectangle { radius: 6; color: "#12364d"; border.color: "#28617c" }
+                                        }
                                     }
                                 }
                             }
