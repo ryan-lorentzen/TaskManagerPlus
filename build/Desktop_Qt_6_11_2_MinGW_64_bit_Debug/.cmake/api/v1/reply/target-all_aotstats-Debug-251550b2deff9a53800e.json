@@ -40,10 +40,10 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "appTaskManagerPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"id" : "module_appTaskManagerPlus_aotstats_target::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "module_appTaskManagerPlus_aotstats_target::@6890427a1f51a3e7e1df"
+			"id" : "appTaskManagerPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "all_aotstats::@6890427a1f51a3e7e1df",

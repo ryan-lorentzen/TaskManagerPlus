@@ -432,7 +432,7 @@
 			{
 				"command" : 15,
 				"file" : 10,
-				"line" : 1045,
+				"line" : 1051,
 				"parent" : 24
 			},
 			{
@@ -444,7 +444,7 @@
 			{
 				"command" : 15,
 				"file" : 10,
-				"line" : 1051,
+				"line" : 1045,
 				"parent" : 24
 			},
 			{
@@ -943,14 +943,11 @@
 		},
 		{
 			"backtrace" : 65,
-			"id" : "appTaskManagerPlus_copy_qml::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 67,
 			"id" : "appTaskManagerPlus_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appTaskManagerPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 67,
+			"id" : "appTaskManagerPlus_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 73,
@@ -959,6 +956,9 @@
 		{
 			"backtrace" : 0,
 			"id" : "appTaskManagerPlus_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "appTaskManagerPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appTaskManagerPlus::@6890427a1f51a3e7e1df",
