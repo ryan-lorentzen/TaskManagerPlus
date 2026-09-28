@@ -9,7 +9,7 @@ This project follows the Keep a Changelog format.
 ## [Unreleased]
 
 ### Added
-
+-Frontend UI Prototype
 ### Changed
 
 ### Fixed
