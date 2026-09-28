@@ -223,11 +223,9 @@ ApplicationWindow {
                     Layout.bottomMargin: 24
                     Layout.leftMargin: 4
                     ColumnLayout { spacing: 0
-                        Text { text: "TASKMANAGER"; color: theme.text; font.pixelSize: 14; font.weight: Font.Bold; font.letterSpacing: 1.3 }
-                        Text { text: "DIAGNOSTICS"; color: theme.cyan; font.pixelSize: 9; font.letterSpacing: 2 }
+                        Text { text: "TASKMANAGER++"; color: theme.text; font.pixelSize: 14; font.weight: Font.Bold; font.letterSpacing: 1.3 }
                     }
                 }
-                MetaText { text: "WORKSPACE"; Layout.leftMargin: 9; Layout.bottomMargin: 5 }
                 NavButton { pageIndex: 0; label: "Overview" }
                 NavButton { pageIndex: 1; label: "Events" }
                 NavButton { pageIndex: 2; label: "Incident Timeline" }
@@ -273,7 +271,7 @@ ApplicationWindow {
                         ColumnLayout {
                             anchors.fill: parent
                             spacing: 16
-                            Text { text: "SYSTEM PULSE"; color: theme.muted; font.pixelSize: 11; font.letterSpacing: 1.5 }
+                            Text { text: "SYSTEM METRICS"; color: theme.muted; font.pixelSize: 11; font.letterSpacing: 1.5 }
                             GridLayout { Layout.fillWidth: true; columns: width > 840 ? 3 : 2; columnSpacing: 14; rowSpacing: 14
                                 MetricCard { Layout.fillWidth: true; label: "CPU load"; value: "42%"; subtext: "3.86 GHz  /  12 logical cores"; accent: theme.cyan }
                                 MetricCard { Layout.fillWidth: true; label: "Memory"; value: "10.1 GB"; subtext: "63% of 16.0 GB in use"; accent: theme.purple }
