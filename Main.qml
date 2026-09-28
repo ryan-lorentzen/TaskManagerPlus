@@ -104,7 +104,6 @@ ApplicationWindow {
     component NavButton: Button {
         id: navButton
         required property int pageIndex
-        required property string glyph
         required property string label
         implicitHeight: 46
         Layout.fillWidth: true
@@ -112,14 +111,7 @@ ApplicationWindow {
         onClicked: window.currentPage = pageIndex
         contentItem: RowLayout {
             spacing: 12
-            Item { Layout.preferredWidth: 4 }
-            Text {
-                text: glyph
-                color: window.currentPage === pageIndex ? theme.cyan : theme.muted
-                font.pixelSize: 16
-                Layout.preferredWidth: 18
-                horizontalAlignment: Text.AlignHCenter
-            }
+            Item { Layout.preferredWidth: 12 }
             Text {
                 text: label
                 color: window.currentPage === pageIndex ? theme.text : theme.muted
@@ -230,22 +222,17 @@ ApplicationWindow {
                 RowLayout {
                     Layout.bottomMargin: 24
                     Layout.leftMargin: 4
-                    spacing: 10
-                    Rectangle { width: 27; height: 27; radius: 8; color: theme.cyan
-                        Text { anchors.centerIn: parent; text: "+"; color: theme.background; font.pixelSize: 20; font.bold: true }
-                    }
                     ColumnLayout { spacing: 0
                         Text { text: "TASKMANAGER"; color: theme.text; font.pixelSize: 14; font.weight: Font.Bold; font.letterSpacing: 1.3 }
                         Text { text: "DIAGNOSTICS"; color: theme.cyan; font.pixelSize: 9; font.letterSpacing: 2 }
                     }
                 }
                 MetaText { text: "WORKSPACE"; Layout.leftMargin: 9; Layout.bottomMargin: 5 }
-                NavButton { pageIndex: 0; glyph: "O"; label: "Overview" }
-                NavButton { pageIndex: 1; glyph: "!"; label: "Error Center" }
-                NavButton { pageIndex: 2; glyph: "H"; label: "Event History" }
-                NavButton { pageIndex: 3; glyph: "T"; label: "Incident Timeline" }
-                NavButton { pageIndex: 4; glyph: "P"; label: "Performance" }
-                NavButton { pageIndex: 5; glyph: "R"; label: "Reports" }
+                NavButton { pageIndex: 0; label: "Overview" }
+                NavButton { pageIndex: 1; label: "Events" }
+                NavButton { pageIndex: 2; label: "Incident Timeline" }
+                NavButton { pageIndex: 3; label: "Performance" }
+                NavButton { pageIndex: 4; label: "Reports" }
                 Item { Layout.fillHeight: true }
                 Rectangle { Layout.fillWidth: true; height: 1; color: theme.border; Layout.bottomMargin: 10 }
                 RowLayout { Layout.leftMargin: 9; spacing: 8
@@ -267,7 +254,7 @@ ApplicationWindow {
                 spacing: 20
                 RowLayout {
                     Layout.fillWidth: true
-                    Heading { text: ["Overview", "Error Center", "Event History", "Incident Timeline", "Performance", "Diagnostic Reports"][window.currentPage] }
+                    Heading { text: ["Overview", "Events", "Incident Timeline", "Performance", "Diagnostic Reports"][window.currentPage] }
                     Item { Layout.fillWidth: true }
                     Rectangle { width: 126; height: 30; radius: 15; color: "#103b3b"; border.color: "#21615e"
                         Row { anchors.centerIn: parent; spacing: 7
@@ -309,8 +296,8 @@ ApplicationWindow {
                                         Text { text: "2 critical records need review"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
                                         Text { text: "Latest: Kernel-Power / Event 41 at 09:42"; color: theme.muted; font.pixelSize: 11 }
                                     }
-                                    Button { text: "Open Error Center"; onClicked: window.currentPage = 1
-                                        contentItem: Text { text: "Open Error Center"; color: theme.cyan; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+                                    Button { text: "Open Events"; onClicked: window.currentPage = 1
+                                        contentItem: Text { text: "Open Events"; color: theme.cyan; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
                                         background: Rectangle { radius: 6; color: "#12364d"; border.color: "#28617c" }
                                     }
                                 }
@@ -332,10 +319,24 @@ ApplicationWindow {
                                             background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
                                         }
                                     }
-                                    MetaText { text: "5 SAMPLE RECORDS / ALL SEVERITIES" }
+                                    RowLayout { Layout.fillWidth: true; spacing: 12
+                                        Button {
+                                            text: "All dates"
+                                            contentItem: Text { text: "All dates"; color: theme.muted; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+                                            background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
+                                        }
+                                        Button {
+                                            text: "All categories"
+                                            contentItem: Text { text: "All categories"; color: theme.muted; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
+                                            background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
+                                        }
+                                        Item { Layout.fillWidth: true }
+                                    }
+                                    MetaText { text: "5 SAMPLE RECORDS / CHRONOLOGICAL PREVIEW" }
                                     ListView { Layout.fillWidth: true; Layout.fillHeight: true; model: eventModel; spacing: 5; clip: true
                                         delegate: EventRow { width: ListView.view.width; eventIndex: index }
                                     }
+                                    Text { text: "Storage status is a visual preview. SQLite persistence is not yet implemented."; color: theme.amber; font.pixelSize: 11; wrapMode: Text.WordWrap; Layout.fillWidth: true }
                                 }
                             }
                             Panel { Layout.preferredWidth: 310; Layout.fillHeight: true
@@ -357,39 +358,6 @@ ApplicationWindow {
                                     Text { text: activeEvent.detail; color: theme.muted; font.pixelSize: 12; lineHeight: 1.35; wrapMode: Text.WordWrap; Layout.fillWidth: true }
                                     Item { Layout.fillHeight: true }
                                     Text { text: "Sample data only. Collection is not connected."; color: theme.amber; font.pixelSize: 10; wrapMode: Text.WordWrap; Layout.fillWidth: true }
-                                }
-                            }
-                        }
-                    }
-
-                    Item {
-                        ColumnLayout { anchors.fill: parent; spacing: 16
-                            Panel { Layout.fillWidth: true; implicitHeight: 82
-                                RowLayout { anchors.fill: parent; anchors.margins: 16; spacing: 12
-                                    TextField { Layout.fillWidth: true; placeholderText: "Search retained event history"; color: theme.text; placeholderTextColor: theme.muted; background: Rectangle { radius: 6; color: "#091a2a"; border.color: theme.border } }
-                                    Button {
-                                        text: "All dates"
-                                        contentItem: Text { text: "All dates"; color: theme.muted; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
-                                        background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
-                                    }
-                                    Button {
-                                        text: "All categories"
-                                        contentItem: Text { text: "All categories"; color: theme.muted; font.pixelSize: 12; horizontalAlignment: Text.AlignHCenter; verticalAlignment: Text.AlignVCenter }
-                                        background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
-                                    }
-                                }
-                            }
-                            Panel { Layout.fillWidth: true; Layout.fillHeight: true
-                                ColumnLayout { anchors.fill: parent; anchors.margins: 18; spacing: 13
-                                    RowLayout {
-                                        Layout.fillWidth: true
-                                        Text { text: "RETAINED EVENT RECORDS"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                        Item { Layout.fillWidth: true }
-                                        Text { text: "CHRONOLOGICAL / DEDUPLICATED"; color: theme.green; font.pixelSize: 10; font.letterSpacing: 1 }
-                                    }
-                                    Repeater { model: eventModel; delegate: EventRow { Layout.fillWidth: true; eventIndex: index } }
-                                    Item { Layout.fillHeight: true }
-                                    Text { text: "Storage status is a visual preview. SQLite persistence is not yet implemented."; color: theme.amber; font.pixelSize: 11 }
                                 }
                             }
                         }

@@ -6,6 +6,8 @@ TaskManager++ is a C++ desktop application designed to simplify Windows performa
 
 The goal is to provide a lightweight, organized, and accessible tool for understanding system performance and diagnosing instability.
 
+**Current status:** The Qt interface is a frontend preview using local sample events and performance values. Its single **Events** screen combines an event list and details with history search and date/category controls. Event collection, filtering, SQLite storage, and live monitoring are not yet connected.
+
 ---
 
 ## Version 1 — Core Features
@@ -19,9 +21,9 @@ Monitor essential system metrics in real time through a desktop dashboard.
 * Historical performance graphs
 * Background monitoring without interrupting the interface
 
-### 2. Unified Error Center
+### 2. Unified Events Screen
 
-Collect and display important Windows events in one centralized interface.
+Collect and display important Windows events and their history in one centralized interface.
 
 * Retrieve historical events from Windows Event Logs.
 * Monitor new events as they occur.
@@ -78,7 +80,7 @@ Allow users to export collected information for troubleshooting.
 ## Development Roadmap
 
 * [ ] Implement Windows Event Log collection.
-* [ ] Create the Error Center interface.
+* [ ] Connect the unified Events interface to collected events.
 * [ ] Add event filtering and detailed event views.
 * [ ] Implement live event monitoring and SQLite storage.
 * [ ] Build CPU and RAM monitoring.
