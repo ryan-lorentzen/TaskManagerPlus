@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "appTaskManagerPlus_autogen/timestamp" "custom" "appTaskManagerPlus_autogen/deps"
+  "C:/Users/rlore/QtProjects/TaskManagerPlus/HardwareInfo.cpp" "CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj" "gcc" "CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj.d"
+  "C:/Users/rlore/QtProjects/TaskManagerPlus/SystemMetricsProvider.cpp" "CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj" "gcc" "CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj.d"
   "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appTaskManagerPlus_autogen/mocs_compilation.cpp" "CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj.d"
   "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/apptaskmanagerplus_qmltyperegistrations.cpp" "CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj" "gcc" "CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj.d"
   "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp" "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj" "gcc" "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj.d"

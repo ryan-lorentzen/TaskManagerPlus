@@ -9,6 +9,7 @@ This project follows the Keep a Changelog format.
 ## [Unreleased]
 
 ### Added
+- Connected Overview to live CPU/GPU utilization, physical RAM usage, available hardware temperatures, and rolling 60-second utilization history.
 - Added one-time Windows CPU/GPU identity and installed RAM detection to Overview, with SMBIOS RAM type when available.
 -Frontend UI Prototype
 - Added a sample dedicated GPU load card to the System Metrics preview.
@@ -21,6 +22,7 @@ This project follows the Keep a Changelog format.
 - Included GPU data in the Performance Data report preview description.
 
 ### Fixed
+- Rejected stale or mismatched Overview temperature replies and added sensor/timing diagnostics with explicit CPU-driver access errors.
 
 ### Removed
 

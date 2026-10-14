@@ -25,6 +25,7 @@ struct GraphicsAdapter {
 struct HardwareInfo {
     QString cpuName = QStringLiteral("Unknown CPU");
     QString gpuName = QStringLiteral("Unknown GPU");
+    QString gpuDeviceId;
     QStringList gpuNames;
     InstalledMemory memory;
 };
@@ -41,6 +42,7 @@ class HardwareInfoProvider : public QObject
     Q_OBJECT
     Q_PROPERTY(QString cpuName READ cpuName NOTIFY hardwareInfoChanged)
     Q_PROPERTY(QString gpuName READ gpuName NOTIFY hardwareInfoChanged)
+    Q_PROPERTY(QString gpuDeviceId READ gpuDeviceId NOTIFY hardwareInfoChanged)
     Q_PROPERTY(QString installedMemory READ installedMemory NOTIFY hardwareInfoChanged)
 
 public:
@@ -49,6 +51,7 @@ public:
 
     QString cpuName() const { return m_info.cpuName; }
     QString gpuName() const { return m_info.gpuName; }
+    QString gpuDeviceId() const { return m_info.gpuDeviceId; }
     QString installedMemory() const { return formatInstalledMemory(m_info.memory); }
 
 signals:

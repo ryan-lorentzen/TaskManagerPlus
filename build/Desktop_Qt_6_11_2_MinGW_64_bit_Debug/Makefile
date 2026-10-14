@@ -64,6 +64,16 @@ CMAKE_BINARY_DIR = C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	C:\Qt\Tools\CMake_64\bin\ctest.exe --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -330,6 +340,45 @@ appTaskManagerPlus_copy_res/fast:
 .PHONY : appTaskManagerPlus_copy_res/fast
 
 #=============================================================================
+# Target rules for targets named sensorBridge
+
+# Build rule for target.
+sensorBridge: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sensorBridge
+.PHONY : sensorBridge
+
+# fast build rule for target.
+sensorBridge/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sensorBridge.dir\build.make CMakeFiles/sensorBridge.dir/build
+.PHONY : sensorBridge/fast
+
+#=============================================================================
+# Target rules for targets named hardwareInfoTests
+
+# Build rule for target.
+hardwareInfoTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 hardwareInfoTests
+.PHONY : hardwareInfoTests
+
+# fast build rule for target.
+hardwareInfoTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/build
+.PHONY : hardwareInfoTests/fast
+
+#=============================================================================
+# Target rules for targets named systemMetricsTests
+
+# Build rule for target.
+systemMetricsTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 systemMetricsTests
+.PHONY : systemMetricsTests
+
+# fast build rule for target.
+systemMetricsTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/build
+.PHONY : systemMetricsTests/fast
+
+#=============================================================================
 # Target rules for targets named generate_qmlls_build_ini_file
 
 # Build rule for target.
@@ -406,6 +455,160 @@ appTaskManagerPlus_autogen: cmake_check_build_system
 appTaskManagerPlus_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus_autogen.dir\build.make CMakeFiles/appTaskManagerPlus_autogen.dir/build
 .PHONY : appTaskManagerPlus_autogen/fast
+
+#=============================================================================
+# Target rules for targets named hardwareInfoTests_autogen_timestamp_deps
+
+# Build rule for target.
+hardwareInfoTests_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 hardwareInfoTests_autogen_timestamp_deps
+.PHONY : hardwareInfoTests_autogen_timestamp_deps
+
+# fast build rule for target.
+hardwareInfoTests_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests_autogen_timestamp_deps.dir\build.make CMakeFiles/hardwareInfoTests_autogen_timestamp_deps.dir/build
+.PHONY : hardwareInfoTests_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named hardwareInfoTests_autogen
+
+# Build rule for target.
+hardwareInfoTests_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 hardwareInfoTests_autogen
+.PHONY : hardwareInfoTests_autogen
+
+# fast build rule for target.
+hardwareInfoTests_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests_autogen.dir\build.make CMakeFiles/hardwareInfoTests_autogen.dir/build
+.PHONY : hardwareInfoTests_autogen/fast
+
+#=============================================================================
+# Target rules for targets named systemMetricsTests_autogen_timestamp_deps
+
+# Build rule for target.
+systemMetricsTests_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 systemMetricsTests_autogen_timestamp_deps
+.PHONY : systemMetricsTests_autogen_timestamp_deps
+
+# fast build rule for target.
+systemMetricsTests_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests_autogen_timestamp_deps.dir\build.make CMakeFiles/systemMetricsTests_autogen_timestamp_deps.dir/build
+.PHONY : systemMetricsTests_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named systemMetricsTests_autogen
+
+# Build rule for target.
+systemMetricsTests_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 systemMetricsTests_autogen
+.PHONY : systemMetricsTests_autogen
+
+# fast build rule for target.
+systemMetricsTests_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests_autogen.dir\build.make CMakeFiles/systemMetricsTests_autogen.dir/build
+.PHONY : systemMetricsTests_autogen/fast
+
+HardwareInfo.obj: HardwareInfo.cpp.obj
+.PHONY : HardwareInfo.obj
+
+# target to build an object file
+HardwareInfo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/HardwareInfo.cpp.obj
+.PHONY : HardwareInfo.cpp.obj
+
+HardwareInfo.i: HardwareInfo.cpp.i
+.PHONY : HardwareInfo.i
+
+# target to preprocess a source file
+HardwareInfo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/HardwareInfo.cpp.i
+.PHONY : HardwareInfo.cpp.i
+
+HardwareInfo.s: HardwareInfo.cpp.s
+.PHONY : HardwareInfo.s
+
+# target to generate assembly for a file
+HardwareInfo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/HardwareInfo.cpp.s
+.PHONY : HardwareInfo.cpp.s
+
+HardwareInfoTests.obj: HardwareInfoTests.cpp.obj
+.PHONY : HardwareInfoTests.obj
+
+# target to build an object file
+HardwareInfoTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/HardwareInfoTests.cpp.obj
+.PHONY : HardwareInfoTests.cpp.obj
+
+HardwareInfoTests.i: HardwareInfoTests.cpp.i
+.PHONY : HardwareInfoTests.i
+
+# target to preprocess a source file
+HardwareInfoTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/HardwareInfoTests.cpp.i
+.PHONY : HardwareInfoTests.cpp.i
+
+HardwareInfoTests.s: HardwareInfoTests.cpp.s
+.PHONY : HardwareInfoTests.s
+
+# target to generate assembly for a file
+HardwareInfoTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/HardwareInfoTests.cpp.s
+.PHONY : HardwareInfoTests.cpp.s
+
+SystemMetricsProvider.obj: SystemMetricsProvider.cpp.obj
+.PHONY : SystemMetricsProvider.obj
+
+# target to build an object file
+SystemMetricsProvider.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/SystemMetricsProvider.cpp.obj
+.PHONY : SystemMetricsProvider.cpp.obj
+
+SystemMetricsProvider.i: SystemMetricsProvider.cpp.i
+.PHONY : SystemMetricsProvider.i
+
+# target to preprocess a source file
+SystemMetricsProvider.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/SystemMetricsProvider.cpp.i
+.PHONY : SystemMetricsProvider.cpp.i
+
+SystemMetricsProvider.s: SystemMetricsProvider.cpp.s
+.PHONY : SystemMetricsProvider.s
+
+# target to generate assembly for a file
+SystemMetricsProvider.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/SystemMetricsProvider.cpp.s
+.PHONY : SystemMetricsProvider.cpp.s
+
+SystemMetricsTests.obj: SystemMetricsTests.cpp.obj
+.PHONY : SystemMetricsTests.obj
+
+# target to build an object file
+SystemMetricsTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/SystemMetricsTests.cpp.obj
+.PHONY : SystemMetricsTests.cpp.obj
+
+SystemMetricsTests.i: SystemMetricsTests.cpp.i
+.PHONY : SystemMetricsTests.i
+
+# target to preprocess a source file
+SystemMetricsTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/SystemMetricsTests.cpp.i
+.PHONY : SystemMetricsTests.cpp.i
+
+SystemMetricsTests.s: SystemMetricsTests.cpp.s
+.PHONY : SystemMetricsTests.s
+
+# target to generate assembly for a file
+SystemMetricsTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/SystemMetricsTests.cpp.s
+.PHONY : SystemMetricsTests.cpp.s
 
 appTaskManagerPlus_autogen/mocs_compilation.obj: appTaskManagerPlus_autogen/mocs_compilation.cpp.obj
 .PHONY : appTaskManagerPlus_autogen/mocs_compilation.obj
@@ -551,6 +754,30 @@ build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlc
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.s
 .PHONY : build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.s
 
+hardwareInfoTests_autogen/mocs_compilation.obj: hardwareInfoTests_autogen/mocs_compilation.cpp.obj
+.PHONY : hardwareInfoTests_autogen/mocs_compilation.obj
+
+# target to build an object file
+hardwareInfoTests_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/hardwareInfoTests_autogen/mocs_compilation.cpp.obj
+.PHONY : hardwareInfoTests_autogen/mocs_compilation.cpp.obj
+
+hardwareInfoTests_autogen/mocs_compilation.i: hardwareInfoTests_autogen/mocs_compilation.cpp.i
+.PHONY : hardwareInfoTests_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+hardwareInfoTests_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/hardwareInfoTests_autogen/mocs_compilation.cpp.i
+.PHONY : hardwareInfoTests_autogen/mocs_compilation.cpp.i
+
+hardwareInfoTests_autogen/mocs_compilation.s: hardwareInfoTests_autogen/mocs_compilation.cpp.s
+.PHONY : hardwareInfoTests_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+hardwareInfoTests_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\hardwareInfoTests.dir\build.make CMakeFiles/hardwareInfoTests.dir/hardwareInfoTests_autogen/mocs_compilation.cpp.s
+.PHONY : hardwareInfoTests_autogen/mocs_compilation.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -575,6 +802,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\appTaskManagerPlus.dir\build.make CMakeFiles/appTaskManagerPlus.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+systemMetricsTests_autogen/mocs_compilation.obj: systemMetricsTests_autogen/mocs_compilation.cpp.obj
+.PHONY : systemMetricsTests_autogen/mocs_compilation.obj
+
+# target to build an object file
+systemMetricsTests_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/systemMetricsTests_autogen/mocs_compilation.cpp.obj
+.PHONY : systemMetricsTests_autogen/mocs_compilation.cpp.obj
+
+systemMetricsTests_autogen/mocs_compilation.i: systemMetricsTests_autogen/mocs_compilation.cpp.i
+.PHONY : systemMetricsTests_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+systemMetricsTests_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/systemMetricsTests_autogen/mocs_compilation.cpp.i
+.PHONY : systemMetricsTests_autogen/mocs_compilation.cpp.i
+
+systemMetricsTests_autogen/mocs_compilation.s: systemMetricsTests_autogen/mocs_compilation.cpp.s
+.PHONY : systemMetricsTests_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+systemMetricsTests_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\systemMetricsTests.dir\build.make CMakeFiles/systemMetricsTests.dir/systemMetricsTests_autogen/mocs_compilation.cpp.s
+.PHONY : systemMetricsTests_autogen/mocs_compilation.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -587,6 +838,7 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... test
 	@echo ... all_aotstats
 	@echo ... all_qmllint
 	@echo ... all_qmllint_json
@@ -604,8 +856,27 @@ help:
 	@echo ... clean_qml_context_properties
 	@echo ... dump_qml_context_properties
 	@echo ... generate_qmlls_build_ini_file
+	@echo ... hardwareInfoTests_autogen
+	@echo ... hardwareInfoTests_autogen_timestamp_deps
 	@echo ... module_appTaskManagerPlus_aotstats_target
+	@echo ... sensorBridge
+	@echo ... systemMetricsTests_autogen
+	@echo ... systemMetricsTests_autogen_timestamp_deps
 	@echo ... appTaskManagerPlus
+	@echo ... hardwareInfoTests
+	@echo ... systemMetricsTests
+	@echo ... HardwareInfo.obj
+	@echo ... HardwareInfo.i
+	@echo ... HardwareInfo.s
+	@echo ... HardwareInfoTests.obj
+	@echo ... HardwareInfoTests.i
+	@echo ... HardwareInfoTests.s
+	@echo ... SystemMetricsProvider.obj
+	@echo ... SystemMetricsProvider.i
+	@echo ... SystemMetricsProvider.s
+	@echo ... SystemMetricsTests.obj
+	@echo ... SystemMetricsTests.i
+	@echo ... SystemMetricsTests.s
 	@echo ... appTaskManagerPlus_autogen/mocs_compilation.obj
 	@echo ... appTaskManagerPlus_autogen/mocs_compilation.i
 	@echo ... appTaskManagerPlus_autogen/mocs_compilation.s
@@ -624,9 +895,15 @@ help:
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.obj
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.i
 	@echo ... build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.s
+	@echo ... hardwareInfoTests_autogen/mocs_compilation.obj
+	@echo ... hardwareInfoTests_autogen/mocs_compilation.i
+	@echo ... hardwareInfoTests_autogen/mocs_compilation.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... systemMetricsTests_autogen/mocs_compilation.obj
+	@echo ... systemMetricsTests_autogen/mocs_compilation.i
+	@echo ... systemMetricsTests_autogen/mocs_compilation.s
 .PHONY : help
 
 

@@ -1126,7 +1126,10 @@
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
+		"C:/Users/rlore/QtProjects/TaskManagerPlus/SensorBridge/THIRD_PARTY_NOTICES.md",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in",
+		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6/windows/app.exe.manifest.in",
+		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6/windows/app.exe.manifest.in",
 		"C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/qml_imports/appTaskManagerPlus_conf.cmake",
 		"C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6/windows/app.exe.manifest.in"
 	],
@@ -1134,7 +1137,21 @@
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appTaskManagerPlus_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "appTaskManagerPlus_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/rlore/QtProjects/TaskManagerPlus/HardwareInfo.h",
+			"MU",
+			"EWIEGA46WW/moc_HardwareInfo.cpp",
+			null
+		],
+		[
+			"C:/Users/rlore/QtProjects/TaskManagerPlus/SystemMetricsProvider.h",
+			"MU",
+			"EWIEGA46WW/moc_SystemMetricsProvider.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appTaskManagerPlus_autogen/include",
 	"MOC_COMPILATION_FILE" : "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appTaskManagerPlus_autogen/mocs_compilation.cpp",
@@ -1197,6 +1214,7 @@
 	"MOC_PREDEFS_CMD" : 
 	[
 		"C:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"-std=gnu++17",
 		"-dM",
 		"-E",
 		"-c",
@@ -1222,6 +1240,16 @@
 	"SETTINGS_FILE" : "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/CMakeFiles/appTaskManagerPlus_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/rlore/QtProjects/TaskManagerPlus/HardwareInfo.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/rlore/QtProjects/TaskManagerPlus/SystemMetricsProvider.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Users/rlore/QtProjects/TaskManagerPlus/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

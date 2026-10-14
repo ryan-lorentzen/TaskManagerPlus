@@ -399,4 +399,28 @@ CMakeFiles/appTaskManagerPlus.dir/main.cpp.obj: \
  C:/Qt/6.11.2/mingw_64/include/QtQml/qqmlregistration.h \
  C:/Qt/6.11.2/mingw_64/include/QtQmlIntegration/qqmlintegration.h \
  C:/Qt/6.11.2/mingw_64/include/QtQml/qqmlerror.h \
- C:/Qt/6.11.2/mingw_64/include/QtQml/qqmlabstracturlinterceptor.h
+ C:/Qt/6.11.2/mingw_64/include/QtQml/qqmlabstracturlinterceptor.h \
+ C:/Qt/6.11.2/mingw_64/include/QtQml/QQmlContext \
+ C:/Qt/6.11.2/mingw_64/include/QtQml/qqmlcontext.h \
+ C:\Users\rlore\QtProjects\TaskManagerPlus\HardwareInfo.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QStringList \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QList \
+ C:\Users\rlore\QtProjects\TaskManagerPlus\SystemMetricsProvider.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QVariantList \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qvariantlist.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QList \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QVariant \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/QJsonObject \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qjsonobject.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qjsonvalue.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qcborvalue.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qcborcommon.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qregularexpression.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/quuid.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qendian.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qjsondocument.h \
+ C:/Qt/6.11.2/mingw_64/include/QtCore/qjsonparseerror.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc

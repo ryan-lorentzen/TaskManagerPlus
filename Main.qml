@@ -23,7 +23,11 @@ ApplicationWindow {
     })
 
     function formatTemperature(celsius) {
-        return temperatureInFahrenheit ? Math.round(celsius * 9 / 5 + 32) + " °F" : celsius + " °C"
+        return systemMetrics.temperatureText(celsius, temperatureInFahrenheit)
+    }
+
+    function formatUsage(percent) {
+        return percent === null || percent === undefined ? "—" : Math.round(percent) + "%"
     }
 
     QtObject {
@@ -77,7 +81,8 @@ ApplicationWindow {
         required property string value
         required property string subtext
         required property color accent
-        property int temperatureCelsius: -1
+        property var temperatureCelsius: null
+        property bool showTemperature: false
         property real fillRatio: 0.63
         implicitHeight: 156
 
@@ -102,7 +107,7 @@ ApplicationWindow {
             }
             Text {
                 text: "Temperature  " + window.formatTemperature(temperatureCelsius)
-                visible: temperatureCelsius >= 0
+                visible: showTemperature
                 color: theme.muted
                 font.pixelSize: 12
             }
@@ -196,6 +201,8 @@ ApplicationWindow {
     component PerformanceGraph: Canvas {
         id: graph
         property var lines: []
+        property bool liveHistory: false
+        property real sampleTimeMs: 0
         implicitHeight: 230
         onPaint: {
             var ctx = getContext("2d")
@@ -215,10 +222,25 @@ ApplicationWindow {
                 if (points.length < 2)
                     continue
                 ctx.beginPath()
+                var penDown = false
+                var previousTimestamp = 0
                 for (var i = 0; i < points.length; ++i) {
-                    var px = i * width / (points.length - 1)
-                    var py = height - (points[i] * (height - 25)) - 12
-                    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py)
+                    var point = points[i]
+                    var value = liveHistory ? point.percent : point
+                    if (value === null || value === undefined) {
+                        penDown = false
+                        continue
+                    }
+                    var px = liveHistory ? (point.timestampMs - sampleTimeMs + 60000) * width / 60000
+                                         : i * width / (points.length - 1)
+                    var ratio = liveHistory ? value / 100 : value
+                    var py = height - (ratio * (height - 25)) - 12
+                    if (!penDown || (liveHistory && point.timestampMs - previousTimestamp > 1500))
+                        ctx.moveTo(px, py)
+                    else
+                        ctx.lineTo(px, py)
+                    penDown = true
+                    previousTimestamp = liveHistory ? point.timestampMs : 0
                 }
                 ctx.strokeStyle = lines[series].color
                 ctx.lineWidth = 2
@@ -227,6 +249,7 @@ ApplicationWindow {
         }
         Component.onCompleted: requestPaint()
         onLinesChanged: requestPaint()
+        onSampleTimeMsChanged: requestPaint()
         onWidthChanged: requestPaint()
         onHeightChanged: requestPaint()
     }
@@ -337,9 +360,9 @@ ApplicationWindow {
                                     }
                                 }
                                 GridLayout { Layout.fillWidth: true; columns: width > 900 ? 4 : 2; columnSpacing: 14; rowSpacing: 14
-                                    MetricCard { Layout.fillWidth: true; label: "CPU load"; value: "42%"; subtext: hardwareInfo.cpuName; temperatureCelsius: 58; fillRatio: 0.42; accent: theme.cyan }
-                                    MetricCard { Layout.fillWidth: true; label: "GPU load"; value: "67%"; subtext: hardwareInfo.gpuName; temperatureCelsius: 64; fillRatio: 0.67; accent: theme.green }
-                                    MetricCard { Layout.fillWidth: true; label: "Memory"; value: "10.1 GB"; subtext: hardwareInfo.installedMemory; accent: theme.purple }
+                                    MetricCard { Layout.fillWidth: true; label: "CPU load"; value: window.formatUsage(systemMetrics.cpuUsagePercent); subtext: hardwareInfo.cpuName; temperatureCelsius: systemMetrics.cpuTemperatureC; showTemperature: true; fillRatio: typeof systemMetrics.cpuUsagePercent === "number" ? systemMetrics.cpuUsagePercent / 100 : 0; accent: theme.cyan }
+                                    MetricCard { Layout.fillWidth: true; label: "GPU load"; value: window.formatUsage(systemMetrics.gpuUsagePercent); subtext: hardwareInfo.gpuName; temperatureCelsius: systemMetrics.gpuTemperatureC; showTemperature: true; fillRatio: typeof systemMetrics.gpuUsagePercent === "number" ? systemMetrics.gpuUsagePercent / 100 : 0; accent: theme.green }
+                                    MetricCard { Layout.fillWidth: true; label: "Memory"; value: systemMetrics.memoryUsedText; subtext: systemMetrics.memorySummaryText + "\n" + hardwareInfo.installedMemory; fillRatio: systemMetrics.memoryUsedRatio; accent: theme.purple }
                                     MetricCard { Layout.fillWidth: true; label: "Event health"; value: "03"; subtext: "new items in the last hour"; accent: theme.pink }
                                 }
                                 Panel { Layout.fillWidth: true; implicitHeight: 280
@@ -354,12 +377,14 @@ ApplicationWindow {
                                                 background: Rectangle { radius: 6; color: theme.panelRaised; border.color: theme.border }
                                             }
                                             Item { Layout.fillWidth: true }
-                                            Text { text: "LAST 60 MINUTES"; color: theme.muted; font.pixelSize: 10; font.letterSpacing: 1 }
+                                            Text { text: "LAST 60 SECONDS"; color: theme.muted; font.pixelSize: 10; font.letterSpacing: 1 }
                                         }
                                         PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true
+                                            liveHistory: true
+                                            sampleTimeMs: systemMetrics.sampleTimeMs
                                             lines: overviewActivity.currentIndex === 0
-                                                   ? [{ points: window.activitySamples.cpu, color: theme.cyan }]
-                                                   : [{ points: window.activitySamples.gpu, color: theme.green }]
+                                                   ? [{ points: systemMetrics.cpuHistory, color: theme.cyan }]
+                                                   : [{ points: systemMetrics.gpuHistory, color: theme.green }]
                                         }
                                     }
                                 }
@@ -512,7 +537,7 @@ ApplicationWindow {
                                     ColumnLayout {
                                         anchors.fill: parent; anchors.margins: 18
                                         Text { text: "CPU UTILIZATION"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                        Text { text: "42%  /  3.86 GHz"; color: theme.cyan; font.pixelSize: 23; font.weight: Font.DemiBold }
+                                        Text { text: "42%  /  3.86 GHz / (sample temp)"; color: theme.cyan; font.pixelSize: 23; font.weight: Font.DemiBold }
                                         PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lines: [{ points: window.activitySamples.cpu, color: theme.cyan }] }
                                         MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
                                     }
@@ -521,7 +546,7 @@ ApplicationWindow {
                                     ColumnLayout {
                                         anchors.fill: parent; anchors.margins: 18
                                         Text { text: "GPU UTILIZATION"; color: theme.text; font.pixelSize: 13; font.weight: Font.DemiBold }
-                                        Text { text: "67%  /  1.92 GHz (sample GPU)"; color: theme.green; font.pixelSize: 23; font.weight: Font.DemiBold }
+                                        Text { text: "67%  /  1.92 GHz (sample GPU) / (temperature)"; color: theme.green; font.pixelSize: 23; font.weight: Font.DemiBold }
                                         PerformanceGraph { Layout.fillWidth: true; Layout.fillHeight: true; lines: [{ points: window.activitySamples.gpu, color: theme.green }] }
                                         MetaText { text: "SAMPLE HISTORY / LAST 60 MINUTES" }
                                     }

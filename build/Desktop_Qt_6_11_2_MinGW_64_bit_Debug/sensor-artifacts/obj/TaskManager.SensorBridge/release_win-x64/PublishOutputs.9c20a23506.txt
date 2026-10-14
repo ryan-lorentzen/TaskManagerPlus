@@ -1,0 +1,17 @@
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\TaskManager.SensorBridge.exe
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\TaskManager.SensorBridge.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\TaskManager.SensorBridge.deps.json
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\TaskManager.SensorBridge.runtimeconfig.json
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\TaskManager.SensorBridge.pdb
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\BlackSharp.Core.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\DiskInfoToolkit.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\HidSharp.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\LibreHardwareMonitorLib.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\Mono.Posix.NETStandard.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\RAMSPDToolkit-NDD.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\System.CodeDom.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\System.IO.Ports.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\System.Management.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\System.Threading.AccessControl.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\MonoPosixHelper.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensors\libMonoPosixHelper.dll

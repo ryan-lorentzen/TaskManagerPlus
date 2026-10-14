@@ -38,6 +38,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/sensors" TYPE DIRECTORY FILES "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/sensors/")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/appTaskManagerPlus.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appTaskManagerPlus.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appTaskManagerPlus.exe")

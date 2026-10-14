@@ -272,7 +272,19 @@ HardwareInfo queryHardwareInfo()
             if (!adapter.name.isEmpty()) info.gpuNames.append(adapter.name);
         info.gpuNames.removeDuplicates();
         info.gpuNames.sort();
-        info.gpuName = selectGraphicsAdapter(adapters, primaryDisplayDeviceId());
+        const QString primaryId = primaryDisplayDeviceId();
+        info.gpuName = selectGraphicsAdapter(adapters, primaryId);
+        QStringList matchingIds;
+        for (const auto &adapter : std::as_const(adapters)) {
+            if (adapter.name == info.gpuName && !adapter.deviceId.isEmpty()) {
+                matchingIds.append(adapter.deviceId);
+                if (adapter.deviceId.compare(primaryId, Qt::CaseInsensitive) == 0)
+                    info.gpuDeviceId = adapter.deviceId;
+            }
+        }
+        matchingIds.sort();
+        if (info.gpuDeviceId.isEmpty() && !matchingIds.isEmpty())
+            info.gpuDeviceId = matchingIds.first();
     }
 
     QList<MemoryModule> modules;
