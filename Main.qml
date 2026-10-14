@@ -337,9 +337,9 @@ ApplicationWindow {
                                     }
                                 }
                                 GridLayout { Layout.fillWidth: true; columns: width > 900 ? 4 : 2; columnSpacing: 14; rowSpacing: 14
-                                    MetricCard { Layout.fillWidth: true; label: "CPU load"; value: "42%"; subtext: "3.86 GHz  /  12 logical cores"; temperatureCelsius: 58; fillRatio: 0.42; accent: theme.cyan }
-                                    MetricCard { Layout.fillWidth: true; label: "GPU load"; value: "67%"; subtext: "1.92 GHz  /  sample dedicated GPU"; temperatureCelsius: 64; fillRatio: 0.67; accent: theme.green }
-                                    MetricCard { Layout.fillWidth: true; label: "Memory"; value: "10.1 GB"; subtext: "63% of 16.0 GB in use"; accent: theme.purple }
+                                    MetricCard { Layout.fillWidth: true; label: "CPU load"; value: "42%"; subtext: hardwareInfo.cpuName; temperatureCelsius: 58; fillRatio: 0.42; accent: theme.cyan }
+                                    MetricCard { Layout.fillWidth: true; label: "GPU load"; value: "67%"; subtext: hardwareInfo.gpuName; temperatureCelsius: 64; fillRatio: 0.67; accent: theme.green }
+                                    MetricCard { Layout.fillWidth: true; label: "Memory"; value: "10.1 GB"; subtext: hardwareInfo.installedMemory; accent: theme.purple }
                                     MetricCard { Layout.fillWidth: true; label: "Event health"; value: "03"; subtext: "new items in the last hour"; accent: theme.pink }
                                 }
                                 Panel { Layout.fillWidth: true; implicitHeight: 280

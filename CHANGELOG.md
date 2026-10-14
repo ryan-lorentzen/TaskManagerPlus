@@ -9,6 +9,7 @@ This project follows the Keep a Changelog format.
 ## [Unreleased]
 
 ### Added
+- Added one-time Windows CPU/GPU identity and installed RAM detection to Overview, with SMBIOS RAM type when available.
 -Frontend UI Prototype
 - Added a sample dedicated GPU load card to the System Metrics preview.
 - Added sample CPU/GPU temperatures and a shared °C/°F switch in the preview.

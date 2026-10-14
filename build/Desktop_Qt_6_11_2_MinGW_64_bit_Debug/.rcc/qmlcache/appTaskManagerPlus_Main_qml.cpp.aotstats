@@ -16,7 +16,7 @@
                         {
                             "codegenResult": 2,
                             "column": 44,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "activitySamples",
                             "line": 18,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
@@ -440,7 +440,7 @@
                         {
                             "codegenResult": 2,
                             "column": 18,
-                            "durationMicroseconds": 2000,
+                            "durationMicroseconds": 3000,
                             "functionName": "onPaint",
                             "line": 200,
                             "message": "Cannot load property length from (component in C:/Users/rlore/QtProjects/TaskManagerPlus/Main.qml)::lines with type QVariant."
@@ -822,24 +822,48 @@
                             "message": ""
                         },
                         {
+                            "codegenResult": 2,
+                            "column": 116,
+                            "durationMicroseconds": 0,
+                            "functionName": "subtext",
+                            "line": 340,
+                            "message": "Cannot access value for name hardwareInfo"
+                        },
+                        {
                             "codegenResult": 0,
-                            "column": 198,
+                            "column": 187,
                             "durationMicroseconds": 0,
                             "functionName": "accent",
                             "line": 340,
                             "message": ""
                         },
                         {
+                            "codegenResult": 2,
+                            "column": 116,
+                            "durationMicroseconds": 0,
+                            "functionName": "subtext",
+                            "line": 341,
+                            "message": "Cannot access value for name hardwareInfo"
+                        },
+                        {
                             "codegenResult": 0,
-                            "column": 202,
+                            "column": 187,
                             "durationMicroseconds": 0,
                             "functionName": "accent",
                             "line": 341,
                             "message": ""
                         },
                         {
+                            "codegenResult": 2,
+                            "column": 118,
+                            "durationMicroseconds": 0,
+                            "functionName": "subtext",
+                            "line": 342,
+                            "message": "Cannot access value for name hardwareInfo"
+                        },
+                        {
                             "codegenResult": 0,
-                            "column": 151,
+                            "column": 156,
                             "durationMicroseconds": 0,
                             "functionName": "accent",
                             "line": 342,
