@@ -1,0 +1,17 @@
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\bin\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.exe
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\bin\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.deps.json
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\bin\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.runtimeconfig.json
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\bin\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\bin\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.pdb
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.csproj.AssemblyReference.cache
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.AssemblyInfoInputs.cache
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.AssemblyInfo.cs
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.csproj.CoreCompileInputs.cache
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.sourcelink.json
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskMana.8CF197BD.Up2Date
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\refint\TaskManager.SensorBridge.dll
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.pdb
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\TaskManager.SensorBridge.genruntimeconfig.cache
+C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\sensor-artifacts\obj\TaskManager.SensorBridge\release_win-x64\ref\TaskManager.SensorBridge.dll

@@ -1,0 +1,4 @@
+hardwareInfoTests 3 0.0338471
+systemMetricsTests 3 0.0958319
+temperatureSelectionTests 3 0.0392545
+---

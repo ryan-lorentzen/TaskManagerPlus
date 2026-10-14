@@ -1,0 +1,97 @@
+{
+    "classes": [
+        {
+            "className": "HardwareInfoProvider",
+            "lineNumber": 40,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 43,
+                    "name": "cpuName",
+                    "notify": "hardwareInfoChanged",
+                    "override": false,
+                    "read": "cpuName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 44,
+                    "name": "gpuName",
+                    "notify": "hardwareInfoChanged",
+                    "override": false,
+                    "read": "gpuName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 45,
+                    "name": "gpuDeviceId",
+                    "notify": "hardwareInfoChanged",
+                    "override": false,
+                    "read": "gpuDeviceId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 46,
+                    "name": "installedMemory",
+                    "notify": "hardwareInfoChanged",
+                    "override": false,
+                    "read": "installedMemory",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "HardwareInfoProvider",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 58,
+                    "name": "hardwareInfoChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "HardwareInfo.h",
+    "outputRevision": 69
+}

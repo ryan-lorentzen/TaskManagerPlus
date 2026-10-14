@@ -6,9 +6,54 @@ TaskManager++ is a C++ desktop application designed to simplify Windows performa
 
 The goal is to provide a lightweight, organized, and accessible tool for understanding system performance and diagnosing instability.
 
-**Current status:** The Qt interface is a frontend preview using local sample events and performance values. System Metrics includes a sample dedicated GPU load card and sample CPU/GPU temperatures with a °C/°F switch. The Overview activity chart switches between CPU and GPU; Performance shows separate CPU, GPU, and memory charts; and the Incident Timeline compares sample CPU, GPU, memory, and disk activity with matching colors. All four context lines are shown by default and can be toggled individually from the chart key. The Reports preview also lists GPU performance data.
+**Current status:** Overview displays real CPU/GPU utilization, current physical RAM usage, and available CPU/GPU temperatures, sampled approximately once per second. Its CPU/GPU activity chart uses a rolling 60-second history with a fixed 0–100% scale. The Celsius/Fahrenheit switch converts temperatures for display only. CPU/GPU identity and installed RAM/type are still detected once at startup through Windows WMI. Performance, Events, Incident Timeline, and Reports remain sample-data previews; the Incident Timeline's sample resource lines can be toggled individually, and report exports remain disabled.
 
-No GPU detection, hardware temperature collection, or live performance collection is connected. The single **Events** screen combines an event list and details with history search and date/category controls; event collection, filtering, and SQLite storage are not yet connected.
+For multiple GPUs, Overview prefers the adapter whose WMI device ID matches the primary desktop display adapter; otherwise it displays the first name in sorted order. GPU counters and temperatures follow that selection, using device IDs and a unique name match only when necessary. Ambiguous or unavailable metrics display `—`; unknown or mixed installed RAM types are omitted. Event collection, filtering, SQLite storage, persistent performance history, and the other pages' live functionality are not connected.
+
+### Overview metrics and temperature dependency
+
+CPU usage uses `GetSystemTimes` deltas (kernel time includes idle); RAM uses
+`GlobalMemoryStatusEx`. GPU usage uses Windows PDH GPU Engine counters matched to
+the selected adapter's DXGI LUID: process contributions are summed within each
+physical engine, and the busiest engine is displayed. Multi-processor-group
+systems show CPU usage as unavailable rather than presenting one group's usage
+as whole-system usage. CPU/GPU samples have monotonic timestamps, retain at most
+60 readings/60 seconds, and leave gaps on failed readings; history is not saved.
+
+Temperatures use **LibreHardwareMonitorLib 0.9.6** through the automatically
+started `sensors/TaskManager.SensorBridge.exe`. This optional, framework-dependent
+helper requires the **.NET 8 x64 runtime**; building it requires a .NET 8-or-newer
+SDK and NuGet access. CMake builds it with the existing Qt workflow when an SDK is
+available (`TASKMANAGER_BUILD_SENSOR_BRIDGE=OFF` skips that build). Publish/package
+the entire generated `sensors/` directory, including its `licenses/` directory.
+Dependency/source notices are in `SensorBridge/THIRD_PARTY_NOTICES.md`.
+
+CPU temperature access additionally requires LibreHardwareMonitor's supported
+**PawnIO driver**, installed separately, and permission to access it. TaskManager++
+does not install drivers or automatically elevate. Missing runtime/helper,
+inaccessible sensors, or a failed sensor process do not stop native utilization or
+RAM sampling. On the development machine GPU core temperature was available;
+PawnIO was installed and running, but the standard-user sensor process received
+access denied, so CPU temperature displayed `—`. That does not mean the CPU lacks
+a sensor or that Adrenalin cannot read it. CPU collection requires driver access;
+restart the application after changing its permissions or driver availability.
+
+Temperature replies include request IDs and separate CPU/GPU acquisition timings.
+Readings older than one sampling interval (one second), malformed replies, and
+replies for another request are rejected; GPU readings must also match the selected
+adapter. Driver-access and sensor-update
+failures are reported once in Qt Creator's Application Output, not in normal UI
+labels. The helper accepts `--diagnostics --once` with one JSON request on stdin
+(`requestId`, `gpuName`, `gpuDeviceId`) to report selected sensor names/identifiers,
+raw Celsius values, and acquisition timing, then exit. Celsius values are only
+rounded for display; no percentage calibration is applied to match another tool.
+
+CPU sensor priority is CPU Package, Core/CPU (Tctl/Tdie), Core (Tdie), Core (Tctl),
+Core Average, CPU Core, then CCDs Average (Tdie); identifier order breaks ties.
+Multi-socket systems use the hottest selected package/die reading. GPU priority is
+GPU Core, GPU Edge, then GPU Temperature. Hotspot, VRAM, per-core, and motherboard
+thermal zones are not substituted. Windows driver/counter support and sensor
+coverage vary; the initial live verification used AMD hardware, not every vendor.
 
 ---
 
@@ -85,8 +130,8 @@ Allow users to export collected information for troubleshooting.
 * [ ] Connect the unified Events interface to collected events.
 * [ ] Add event filtering and detailed event views.
 * [ ] Implement live event monitoring and SQLite storage.
-* [ ] Build CPU and RAM monitoring.
-* [ ] Create real-time performance graphs.
+* [x] Add live CPU and physical RAM usage to Overview.
+* [x] Add rolling live CPU/GPU utilization graphs to Overview.
 * [ ] Implement basic incident timelines.
 * [ ] Add diagnostic report exports.
 * [ ] Write automated tests and package the application.
@@ -106,8 +151,8 @@ The following features are planned for potential releases beyond Version 1.
 
 ### Hardware Monitoring
 
-* CPU and GPU temperature monitoring.
-* GPU utilization and VRAM usage.
+* Broader CPU/GPU temperature hardware coverage (Overview reads supported sensors).
+* VRAM usage (GPU utilization is already connected on Overview).
 * Disk utilization and drive health information.
 * Configurable performance thresholds and alerts.
 

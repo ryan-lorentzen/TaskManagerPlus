@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Build focused hardware and metrics tests
+BUILD_TESTING:BOOL=ON
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Qt/Tools/mingw1310_64/bin/addr2line.exe
 
@@ -288,6 +291,9 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a program.
+DOTNET_EXECUTABLE:FILEPATH=C:/Program Files/dotnet/dotnet.exe
+
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
 QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
@@ -369,6 +375,10 @@ Qt6TaskTree_DIR:PATH=C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6TaskTree
 
 //The directory containing a CMake configuration file for Qt6.
 Qt6_DIR:PATH=C:/Qt/6.11.2/mingw_64/lib/cmake/Qt6
+
+//Build the optional LibreHardwareMonitor temperature helper (.NET
+// 8)
+TASKMANAGER_BUILD_SENSOR_BRIDGE:BOOL=ON
 
 //Value Computed by CMake
 TaskManagerPlus_BINARY_DIR:STATIC=C:/Users/rlore/QtProjects/TaskManagerPlus/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug

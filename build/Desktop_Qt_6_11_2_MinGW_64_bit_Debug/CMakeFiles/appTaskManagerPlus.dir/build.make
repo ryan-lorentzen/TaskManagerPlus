@@ -168,11 +168,41 @@ CMakeFiles/appTaskManagerPlus.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appTaskManagerPlus.dir/main.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rlore\QtProjects\TaskManagerPlus\main.cpp -o CMakeFiles\appTaskManagerPlus.dir\main.cpp.s
 
+CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/flags.make
+CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
+CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj: C:/Users/rlore/QtProjects/TaskManagerPlus/HardwareInfo.cpp
+CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\HardwareInfo.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\HardwareInfo.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\HardwareInfo.cpp
+
+CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rlore\QtProjects\TaskManagerPlus\HardwareInfo.cpp > CMakeFiles\appTaskManagerPlus.dir\HardwareInfo.cpp.i
+
+CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rlore\QtProjects\TaskManagerPlus\HardwareInfo.cpp -o CMakeFiles\appTaskManagerPlus.dir\HardwareInfo.cpp.s
+
+CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/flags.make
+CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
+CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj: C:/Users/rlore/QtProjects/TaskManagerPlus/SystemMetricsProvider.cpp
+CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\SystemMetricsProvider.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\SystemMetricsProvider.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\SystemMetricsProvider.cpp
+
+CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rlore\QtProjects\TaskManagerPlus\SystemMetricsProvider.cpp > CMakeFiles\appTaskManagerPlus.dir\SystemMetricsProvider.cpp.i
+
+CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rlore\QtProjects\TaskManagerPlus\SystemMetricsProvider.cpp -o CMakeFiles\appTaskManagerPlus.dir\SystemMetricsProvider.cpp.s
+
 CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/flags.make
 CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
 CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj: apptaskmanagerplus_qmltyperegistrations.cpp
 CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wa,-mbig-obj -MD -MT CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\apptaskmanagerplus_qmltyperegistrations.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\apptaskmanagerplus_qmltyperegistrations.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\apptaskmanagerplus_qmltyperegistrations.cpp
 
 CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.i: cmake_force
@@ -187,7 +217,7 @@ CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj: .qt/rcc/qrc_qmake_TaskManagerPlus.cpp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_TaskManagerPlus.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_TaskManagerPlus.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_qmake_TaskManagerPlus.cpp
 
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.i: cmake_force
@@ -202,7 +232,7 @@ CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rc
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj: .rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appTaskManagerPlus_qmlcache_loader.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appTaskManagerPlus_qmlcache_loader.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appTaskManagerPlus_qmlcache_loader.cpp
 
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.i: cmake_force
@@ -217,7 +247,7 @@ CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rc
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj: .rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appTaskManagerPlus_Main_qml.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appTaskManagerPlus_Main_qml.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.rcc\qmlcache\appTaskManagerPlus_Main_qml.cpp
 
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_Main_qml.cpp.i: cmake_force
@@ -232,7 +262,7 @@ CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/includes_CXX.rsp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj: .qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj: CMakeFiles/appTaskManagerPlus.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.obj -MF CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appTaskManagerPlus_raw_qml_0.cpp.obj.d -o CMakeFiles\appTaskManagerPlus.dir\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appTaskManagerPlus_raw_qml_0.cpp.obj -c C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\.qt\rcc\qrc_appTaskManagerPlus_raw_qml_0.cpp
 
 CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_appTaskManagerPlus_raw_qml_0.cpp.i: cmake_force
@@ -247,6 +277,8 @@ CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt
 appTaskManagerPlus_OBJECTS = \
 "CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/appTaskManagerPlus.dir/main.cpp.obj" \
+"CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj" \
+"CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj" \
 "CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj" \
 "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj" \
 "CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj" \
@@ -258,6 +290,8 @@ appTaskManagerPlus_EXTERNAL_OBJECTS =
 
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/appTaskManagerPlus_autogen/mocs_compilation.cpp.obj
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/main.cpp.obj
+appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/HardwareInfo.cpp.obj
+appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/SystemMetricsProvider.cpp.obj
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/apptaskmanagerplus_qmltyperegistrations.cpp.obj
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.qt/rcc/qrc_qmake_TaskManagerPlus.cpp.obj
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/build/Desktop_Qt_6_11_2_MinGW_64_bit_Debug/.rcc/qmlcache/appTaskManagerPlus_qmlcache_loader.cpp.obj
@@ -275,7 +309,7 @@ appTaskManagerPlus.exe: appTaskManagerPlus.exe.manifest
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/linkLibs.rsp
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/objects1.rsp
 appTaskManagerPlus.exe: CMakeFiles/appTaskManagerPlus.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable appTaskManagerPlus.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\rlore\QtProjects\TaskManagerPlus\build\Desktop_Qt_6_11_2_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable appTaskManagerPlus.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\appTaskManagerPlus.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

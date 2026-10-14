@@ -1,0 +1,219 @@
+{
+    "classes": [
+        {
+            "className": "SystemMetricsProvider",
+            "lineNumber": 55,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "celsius",
+                            "type": "QVariant"
+                        },
+                        {
+                            "name": "fahrenheit",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "lineNumber": 84,
+                    "name": "temperatureText",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 58,
+                    "name": "cpuUsagePercent",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "cpuUsagePercent",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 59,
+                    "name": "gpuUsagePercent",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "gpuUsagePercent",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 60,
+                    "name": "cpuTemperatureC",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "cpuTemperatureC",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 61,
+                    "name": "gpuTemperatureC",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "gpuTemperatureC",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariant",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "lineNumber": 62,
+                    "name": "memoryUsedText",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "memoryUsedText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 63,
+                    "name": "memorySummaryText",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "memorySummaryText",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "lineNumber": 64,
+                    "name": "memoryUsedRatio",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "memoryUsedRatio",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "lineNumber": 65,
+                    "name": "cpuHistory",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "cpuHistory",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "lineNumber": 66,
+                    "name": "gpuHistory",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "gpuHistory",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "lineNumber": 67,
+                    "name": "sampleTimeMs",
+                    "notify": "snapshotChanged",
+                    "override": false,
+                    "read": "sampleTimeMs",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "qint64",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "SystemMetricsProvider",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 87,
+                    "name": "snapshotChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "SystemMetricsProvider.h",
+    "outputRevision": 69
+}
